@@ -19,12 +19,12 @@ workflows:
   build:
     jobs:
       - build
-  weekly_cron:
+  monthly:
     jobs:
       - build
     triggers:
       - schedule:
-          cron: 0 5 * * 1 # Build once a week
+          cron: 0 5 1 * * # Build once a month
           filters:
             branches:
               only:

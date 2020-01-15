@@ -10,7 +10,7 @@ RUN ln -sf /usr/share/zoneinfo/Etc/UTC /etc/localtime
 RUN dnf -y update; dnf clean all
 
 # Fundamental packages
-RUN dnf -y install file gcc make man git sudo tar which openssl-devel; dnf clean all
+RUN dnf -y install file gcc make man git sudo tar which systemd-devel openssl-devel; dnf clean all
 
 # Download Rustup installer
 RUN curl https://sh.rustup.rs -o /usr/bin/rustup-install

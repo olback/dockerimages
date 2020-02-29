@@ -10,8 +10,7 @@ RUN ln -sf /usr/share/zoneinfo/Etc/UTC /etc/localtime
 RUN dnf -y update; dnf clean all
 
 # Fundamental packages
-RUN dnf -y install file gcc make man git sudo tar which systemd-devel openssl-devel; dnf clean all
-
+RUN dnf -y install file gcc make man git sudo tar which systemd-devel openssl-devel llvm llvm-devel clang; dnf clean all
 # Download Rustup installer
 RUN curl https://sh.rustup.rs -o /usr/bin/rustup-install
 RUN chmod +x /usr/bin/rustup-install
@@ -46,6 +45,7 @@ RUN dnf -y install mingw64-gtk3 gtk3 gtk3-devel
 RUN dnf -y install mingw64-glib2-static glib2 glib2-devel
 RUN dnf -y install atk atk-devel
 RUN dnf -y install mingw64-winpthreads mingw64-winpthreads-static
+RUN dnf -y install libappindicator-gtk3-devel
 
 # Env
 USER circleci

@@ -33,6 +33,7 @@ RUN /home/circleci/.cargo/bin/rustup component add rustfmt
 
 # Install deps
 USER root
+RUN dnf -y install librsvg2 librsvg2-devel
 RUN dnf -y install freetype freetype-devel
 RUN dnf -y install cairo cairo-devel
 RUN dnf -y install harfbuzz harfbuzz-devel

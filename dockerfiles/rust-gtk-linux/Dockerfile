@@ -43,6 +43,7 @@ RUN dnf -y install gtk3 gtk3-devel
 RUN dnf -y install glib2 glib2-devel
 RUN dnf -y install atk atk-devel
 RUN dnf -y install libappindicator-gtk3-devel
+RUN dnf -y install libXScrnSaver-devel
 
 WORKDIR /home/circleci
 

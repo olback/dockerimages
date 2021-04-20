@@ -3,22 +3,21 @@
 `.cargo/config.toml`:
 ```
 [build]
-target = "arm-unknown-linux-gnueabihfl"
+target = "armv7-unknown-linux-gnueabihfl"
 
-[target.arm-unknown-linux-gnueabihf]
+[target.armv7-unknown-linux-gnueabihf]
+linker = "arm-linux-gnueabihf-gcc"
+
+[target.armv7-unknown-linux-musleabihf]
 linker = "arm-linux-gnueabihf-gcc"
 ```
 
-`cargo.sh`:
+Terminal:
 ```
-#!/bin/sh
-
-docker run --rm -it -v $(pwd):/home/rust/project rpi-cross-rust:latest cargo $@
+docker run -it -v $(pwd):/home/rust/project olback/rpi-cross-rust:latest /bin/bash
 ```
 
-### Running cargo commands
+Inside container:
 ```
-./cargo.sh build --release
-./cargo.sh run
-...
+cargo build
 ```

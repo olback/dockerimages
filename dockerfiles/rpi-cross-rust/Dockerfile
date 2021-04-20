@@ -7,8 +7,8 @@ RUN apt install sudo cmake make -y
 RUN apt install gcc-arm-linux-gnueabihf binutils-arm-linux-gnueabihf -y
 
 # Install rust targets
-RUN rustup target add arm-unknown-linux-gnueabihf arm-unknown-linux-musleabihf
-RUN rustup +nightly target add arm-unknown-linux-gnueabihf arm-unknown-linux-musleabihf
+RUN rustup target add armv7-unknown-linux-gnueabihf armv7-unknown-linux-musleabihf
+RUN rustup +nightly target add armv7-unknown-linux-gnueabihf armv7-unknown-linux-musleabihf
 
 # Add user
 RUN groupadd --gid 1000 rust \

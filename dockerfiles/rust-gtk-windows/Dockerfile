@@ -58,8 +58,8 @@ ENV WORKIN_CRT2=/usr/x86_64-w64-mingw32/sys-root/mingw/lib/crt2.o
 WORKDIR /home/circleci
 
 # Replace rusts crt2 with mingws version
-RUN mv ${CRT2} ${CRT2}.bak
-RUN cp ${WORKIN_CRT2} $CRT2
+#RUN mv ${CRT2} ${CRT2}.bak
+#RUN cp ${WORKIN_CRT2} $CRT2
 
 # Create work folder
 RUN mkdir -p project

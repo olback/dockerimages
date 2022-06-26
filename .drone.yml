@@ -3,20 +3,20 @@ type: docker
 name: build
 
 steps:
-- name: build
-  image: docker:latest
-  environment:
-    D_USERNAME:
-      from_secret: D_USERNAME
-    D_PASSWORD:
-      from_secret: D_PASSWORD
-  commands:
-  - ./build.sh
-  volumes:
-  - /var/run/docker.sock:/var/run/docker.sock
-  when:
-    branch:
-    - master
+  - name: build
+    image: docker:latest
+    environment:
+      D_USERNAME:
+        from_secret: D_USERNAME
+      D_PASSWORD:
+        from_secret: D_PASSWORD
+    commands:
+      - ./build.sh
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    when:
+      branch:
+        - master
 
 trigger:
   event:

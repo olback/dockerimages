@@ -8,7 +8,7 @@ steps:
   commands:
   - pwd
   - ls -lah
-  - bash build.sh
+  - ./build.sh
   when:
     branch:
     - master

@@ -1,6 +1,6 @@
 kind: pipeline
 type: docker
-name: default
+name: build
 
 steps:
 - name: build
@@ -8,8 +8,8 @@ steps:
   environment:
     D_USERNAME:
       from_secret: D_USERNAME
-    D_PASSWPRD:
-      from_secret: D_PASSWPRD 
+    D_PASSWORD:
+      from_secret: D_PASSWORD
   commands:
   - ./build.sh
   when:

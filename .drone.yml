@@ -5,9 +5,12 @@ name: default
 steps:
 - name: build
   image: docker:latest
+  environment:
+    D_USERNAME:
+      from_secret: D_USERNAME
+    D_PASSWPRD:
+      from_secret: D_PASSWPRD 
   commands:
-  - pwd
-  - ls -lah
   - ./build.sh
   when:
     branch:

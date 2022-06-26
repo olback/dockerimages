@@ -13,12 +13,17 @@ steps:
     commands:
       - ./build.sh
     volumes:
-      - '/var/run/docker.sock:/var/run/docker.sock'
+      - name: dockersock
+        path: /var/run/docker.sock
     when:
       branch:
         - master
 
+volumes:
+  - name: dockersock
+    host:
+      path: /var/run/docker.sock
+
 trigger:
   event:
     - push
-

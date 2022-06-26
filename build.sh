@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 set -xe
 
@@ -31,3 +31,4 @@ for p in $(ls $dockerfiles); do
 done
 
 docker logout
+

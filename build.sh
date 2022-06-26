@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -xe
+
 # Get date
 date=$(date +"%Y-%m-%d")
 

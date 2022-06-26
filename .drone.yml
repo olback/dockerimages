@@ -12,6 +12,8 @@ steps:
       from_secret: D_PASSWORD
   commands:
   - ./build.sh
+  volumes:
+  - /var/run/docker.sock:/var/run/docker.sock
   when:
     branch:
     - master

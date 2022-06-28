@@ -19,7 +19,7 @@ for p in $(ls $dockerfiles); do
     echo ""
 
     # Build image
-    docker build -t $D_USERNAME/$p:$date -f "$dockerfiles/$p/Dockerfile" "$dockerfiles/$p"
+    docker build --pull --no-cache -t $D_USERNAME/$p:$date -f "$dockerfiles/$p/Dockerfile" "$dockerfiles/$p"
 
     # Create 'latest' tag
     docker tag $D_USERNAME/$p:$date $D_USERNAME/$p:latest

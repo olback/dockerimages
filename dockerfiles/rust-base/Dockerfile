@@ -38,9 +38,11 @@ RUN rustup component add clippy
 RUN rustup +nightly component add llvm-tools-preview
 RUN rustup +nightly component add rustfmt
 RUN rustup +nightly component add clippy
-RUN cargo install cargo-expand
-RUN cargo install cargo-make
-RUN cargo install cargo-binutils
+RUN cargo install cargo-expand --locked
+RUN cargo install cargo-make --locked
+RUN cargo install cargo-binutils --locked
+RUN cargo install cargo-outdated --locked
+RUN cargo install cargo-audit --locked
 
 # Create work folder
 WORKDIR /home/circleci

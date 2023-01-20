@@ -27,3 +27,6 @@ volumes:
 trigger:
   event:
     - push
+    - custom
+    - cron
+

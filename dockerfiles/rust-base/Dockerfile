@@ -43,6 +43,12 @@ RUN cargo install cargo-make --locked
 RUN cargo install cargo-binutils --locked
 RUN cargo install cargo-outdated --locked
 RUN cargo install cargo-audit --locked
+RUN cargo install cargo-cache --locked
+RUN cargo install cargo-criterion --locked
+RUN cargo install gitlab-report --locked
+
+# Cleanup
+cargo cache -a
 
 # Create work folder
 WORKDIR /home/circleci

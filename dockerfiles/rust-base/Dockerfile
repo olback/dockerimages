@@ -48,7 +48,7 @@ RUN cargo install cargo-criterion --locked
 RUN cargo install gitlab-report --locked
 
 # Cleanup
-cargo cache -a
+RUN cargo cache -a
 
 # Create work folder
 WORKDIR /home/circleci

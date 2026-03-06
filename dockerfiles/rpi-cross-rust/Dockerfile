@@ -1,4 +1,4 @@
-FROM rust:1-slim-buster
+FROM rust:1-slim-bullseye
 
 # Update system and install toolchain
 RUN apt update
@@ -7,8 +7,8 @@ RUN apt install sudo cmake make -y
 RUN apt install gcc-arm-linux-gnueabihf binutils-arm-linux-gnueabihf libudev-dev -y
 
 # Install rust targets
-RUN rustup target add armv7-unknown-linux-gnueabihf armv7-unknown-linux-musleabihf
-RUN rustup +nightly target add armv7-unknown-linux-gnueabihf armv7-unknown-linux-musleabihf
+RUN rustup target add armv7-unknown-linux-gnueabihf armv7-unknown-linux-musleabihf arm-unknown-linux-gnueabi arm-unknown-linux-gnueabihf arm-unknown-linux-musleabi arm-unknown-linux-musleabihf
+RUN rustup +nightly target add armv7-unknown-linux-gnueabihf armv7-unknown-linux-musleabihf arm-unknown-linux-gnueabi arm-unknown-linux-gnueabihf arm-unknown-linux-musleabi arm-unknown-linux-musleabihf
 
 # Add user
 RUN groupadd --gid 1000 rust \
